@@ -1,0 +1,16 @@
+.our-prices-tittle {
+  font-size: 26px;
+}
+
+.img-card {
+  max-width: 356px;
+  max-height: 189px;
+}
+
+.border-none {
+  box-shadow: none;
+}
+
+.border-none:hover {
+  
+}
