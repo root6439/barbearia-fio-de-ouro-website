@@ -12,3 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 600px !important;
   height: 400px !important;
 }
+
+mat-form-field {
+  width: 100%;
+}

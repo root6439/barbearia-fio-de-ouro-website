@@ -67,7 +67,7 @@
 
   <div class="row mt-3">
     <div class="col">
-      <mat-card class="mat-elevation-z4">
+      <mat-card class="border-none">
         <mat-card-header>
           <mat-card-title>Cabelo</mat-card-title>
         </mat-card-header>
@@ -127,4 +127,82 @@
   </div>
 </div>
 
-<div class="row"></div>
+<div class="row">
+  <carousel [height]="350" [cellWidth]="250">
+    <div class="carousel-cell" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Sobrancelha</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="/assets/images/barber_1.jpg"
+          alt="Sobrancelha"
+        />
+        <mat-card-content>
+          <p class="text-justify">
+            Corte de cabelo tradicional, podendo ser personalizado conforme o
+            gosto do cliente.
+          </p>
+        </mat-card-content>
+        <mat-card-actions> R$ 10,00 </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="carousel-cell"></div>
+  </carousel>
+</div>
+
+<div class="contact-us">
+  <div class="row">
+    <p class="text-center">Ficou com alguma dúvida? Entre em contato!</p>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <form (ngSubmit)="submitForm()" [formGroup]="formContactUs">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input type="text" matInput formControlName="name" />
+          <mat-error *ngIf="formContactUs.controls.name.hasError('required')">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Telefone</mat-label>
+          <input type="tel" matInput formControlName="phone" />
+          <mat-error *ngIf="formContactUs.controls.phone.hasError('required')">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input type="email" matInput formControlName="email" />
+          <mat-error *ngIf="formContactUs.controls.email.hasError('required')">
+            Campo obrigatório
+          </mat-error>
+          <mat-error *ngIf="formContactUs.controls.email.hasError('email')">
+            E-mail inválido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Mensagem</mat-label>
+          <textarea matInput formControlName="message"></textarea>
+          <mat-error
+            *ngIf="formContactUs.controls.message.hasError('required')"
+          >
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-flat-button type="submit" color="primary">Enviar</button>
+      </form>
+    </div>
+
+    <div class="col-6">
+      <img src="assets/images/barber_2.jpg" alt="Barbeiro" class="img-fluid" />
+    </div>
+  </div>
+</div>
