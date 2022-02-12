@@ -152,57 +152,67 @@
   </carousel>
 </div>
 
-<div class="contact-us">
+<div>
   <div class="row">
-    <p class="text-center">Ficou com alguma dúvida? Entre em contato!</p>
+    <h2 class="text-center">Ficou com alguma dúvida? Entre em contato!</h2>
   </div>
 
-  <div class="row">
-    <div class="col-6">
-      <form (ngSubmit)="submitForm()" [formGroup]="formContactUs">
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input type="text" matInput formControlName="name" />
-          <mat-error *ngIf="formContactUs.controls.name.hasError('required')">
-            Campo obrigatório
-          </mat-error>
-        </mat-form-field>
+  <div class="d-flex justify-content-center ">
+    <div class="row w-75 my-3 contact-us p-5">
+      <div class="col-6">
+        <form (ngSubmit)="submitForm()" [formGroup]="formContactUs">
+          <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput formControlName="name" />
+            <mat-error *ngIf="formContactUs.controls.name.hasError('required')">
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Telefone</mat-label>
-          <input type="tel" matInput formControlName="phone" />
-          <mat-error *ngIf="formContactUs.controls.phone.hasError('required')">
-            Campo obrigatório
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input type="tel" matInput formControlName="phone" />
+            <mat-error
+              *ngIf="formContactUs.controls.phone.hasError('required')"
+            >
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>E-mail</mat-label>
-          <input type="email" matInput formControlName="email" />
-          <mat-error *ngIf="formContactUs.controls.email.hasError('required')">
-            Campo obrigatório
-          </mat-error>
-          <mat-error *ngIf="formContactUs.controls.email.hasError('email')">
-            E-mail inválido
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input type="email" matInput formControlName="email" />
+            <mat-error
+              *ngIf="formContactUs.controls.email.hasError('required')"
+            >
+              Campo obrigatório
+            </mat-error>
+            <mat-error *ngIf="formContactUs.controls.email.hasError('email')">
+              E-mail inválido
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Mensagem</mat-label>
-          <textarea matInput formControlName="message"></textarea>
-          <mat-error
-            *ngIf="formContactUs.controls.message.hasError('required')"
-          >
-            Campo obrigatório
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Mensagem</mat-label>
+            <textarea matInput formControlName="message"></textarea>
+            <mat-error
+              *ngIf="formContactUs.controls.message.hasError('required')"
+            >
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
 
-        <button mat-flat-button type="submit" color="primary">Enviar</button>
-      </form>
-    </div>
+          <button mat-flat-button type="submit" color="primary" [disabled]="formContactUs.invalid">Enviar</button>
+        </form>
+      </div>
 
-    <div class="col-6">
-      <img src="assets/images/barber_2.jpg" alt="Barbeiro" class="img-fluid" />
+      <div class="col-6">
+        <img
+          src="assets/images/barber_2.jpg"
+          alt="Barbeiro"
+          class="img-fluid"
+        />
+      </div>
     </div>
   </div>
 </div>
