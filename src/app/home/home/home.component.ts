@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
   }
 
   submitForm(): void {}
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 }

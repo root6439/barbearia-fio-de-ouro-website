@@ -1,71 +1,89 @@
-<div
-  id="carouselExampleControls"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/images/barber_1.jpg" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/barber_2.jpg" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/barber_3.jpg" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/barber_4.jpg" class="d-block w-100" alt="..." />
-    </div>
+<div class="row align-items-center mt-80">
+  <div class="col-9">
+    <h2 class="title">Barbearia</h2>
+    <h1
+      class="text-justify d-flex justify-content-center align-items-center title"
+    >
+      Fio de Ouro
+    </h1>
+    <p>
+      A 45 anos deixando todos da Ponte do Imaruim os mais bonitos de Palhoça.
+    </p>
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="scroll(ourCuts)"
+    >
+      Você duvida? Então veja nossos cortes.
+    </button>
   </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleControls"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleControls"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<div class="row align-items-center">
-  <div class="col-6 d-flex justify-content-center">
+  <div class="col-3 d-flex justify-content-center">
     <img src="assets/images/logo.jpg" alt="Logo barbearia fio de ouro" />
   </div>
+</div>
 
+<!-- feedback dos clientes
+
+
+
+
+-->
+
+<div class="row d-flex justify-content-center our-prices-tittle mt-5">
+  Nossa história
+</div>
+<div class="row align-items-center mt-5">
   <div class="col-6">
-    <p
-      class="text-justify"
-      style="display: flex; justify-content: center; align-items: center"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula metus
-      sagittis lacinia consectetur. Vivamus finibus mollis augue, vitae pulvinar
-      dui aliquet sit amet. Donec accumsan, nibh non ultricies tincidunt, nibh
-      arcu rhoncus nisl, in mollis eros urna nec purus. Vestibulum quis viverra
-      est. Sed viverra non nunc sed porta. Curabitur ac enim lorem. Morbi vel
-      ante quam. Ut quis porttitor metus, sed scelerisque enim. Quisque molestie
-      faucibus arcu, vitae dapibus odio dignissim vel. Praesent fermentum
-      pulvinar ex vitae dignissim. Nullam consequat gravida urna ac gravida.
-      Aenean pulvinar vel turpis sed aliquam.
-    </p>
+    <mat-card class="mat-elevation-z0">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Ari Soares Henrique</mat-card-title>
+        <mat-card-subtitle>Fundador</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-6 d-flex justify-content-center">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Antônio Soares Henrique</mat-card-title>
+        <mat-card-subtitle>Sucessor</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
-<div class="our-prices">
+<div class="our-prices mt-5">
   <div class="row d-flex justify-content-center our-prices-tittle">
     Nossos preços
   </div>
 
-  <div class="row mt-3">
+  <div class="row mt-3 mt-5">
     <div class="col">
       <mat-card class="border-none">
         <mat-card-header>
@@ -127,25 +145,32 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row d-flex justify-content-center our-prices-tittle mt-5" #ourCuts>
+  Nossos cortes
+</div>
+
+<div class="row mt-5">
   <carousel [height]="350" [cellWidth]="250">
-    <div class="carousel-cell" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
-      <mat-card>
-        <mat-card-header>
+    <div class="carousel-cell" *ngFor="let item of [].constructor(5)">
+      <mat-card class="mat-elevation-z0">
+        <mat-card-header class="justify-content-center">
           <mat-card-title>Sobrancelha</mat-card-title>
         </mat-card-header>
         <img
           mat-card-image
           src="/assets/images/barber_1.jpg"
           alt="Sobrancelha"
+          class="img-card m-auto"
         />
-        <mat-card-content>
+        <mat-card-content class="mt-3">
           <p class="text-justify">
             Corte de cabelo tradicional, podendo ser personalizado conforme o
             gosto do cliente.
           </p>
         </mat-card-content>
-        <mat-card-actions> R$ 10,00 </mat-card-actions>
+        <mat-card-actions class="d-flex justify-content-center">
+          R$ 10,00
+        </mat-card-actions>
       </mat-card>
     </div>
     <div class="carousel-cell"></div>
@@ -157,7 +182,7 @@
     <h2 class="text-center">Ficou com alguma dúvida? Entre em contato!</h2>
   </div>
 
-  <div class="d-flex justify-content-center ">
+  <div class="d-flex justify-content-center">
     <div class="row w-75 my-3 contact-us p-5">
       <div class="col-6">
         <form (ngSubmit)="submitForm()" [formGroup]="formContactUs">
@@ -202,7 +227,14 @@
             </mat-error>
           </mat-form-field>
 
-          <button mat-flat-button type="submit" color="primary" [disabled]="formContactUs.invalid">Enviar</button>
+          <button
+            mat-flat-button
+            type="submit"
+            color="primary"
+            [disabled]="formContactUs.invalid"
+          >
+            Enviar
+          </button>
         </form>
       </div>
 

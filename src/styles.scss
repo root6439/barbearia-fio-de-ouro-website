@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: ProductSans;
+  src: url("./assets/fonts/ProductSansRegular.ttf");
+}
+
+@font-face {
+  font-family: ProductSansBold;
+  src: url("./assets/fonts/ProductSansBold.ttf");
+}
+
+@font-face {
+  font-family: HurricaneRegular;
+  src: url("./assets/fonts/Hurricane-Regular.ttf");
+}
+
+@import "~@angular/material/theming";
+$custom-typography: mat-typography-config(
+  $font-family: "ProductSans",
+);
+
+@include angular-material-typography($custom-typography);
+
+p,
+h1,
+h2 {
+  font-family: "ProductSans" !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.img-barber {
+  width: 600px !important;
+  height: 400px !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
