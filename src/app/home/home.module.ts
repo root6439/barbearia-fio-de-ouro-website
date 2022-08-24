@@ -1,4 +1,3 @@
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeRoutingModule } from './home-routing.module';
 import { NgModule } from '@angular/core';
@@ -16,7 +15,6 @@ import { MatInputModule } from '@angular/material/input';
     HomeRoutingModule,
     MatCardModule,
     MatButtonModule,
-    IvyCarouselModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,

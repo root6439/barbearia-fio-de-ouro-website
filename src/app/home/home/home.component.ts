@@ -7,18 +7,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  formContactUs: FormGroup;
+  formContactUs: FormGroup = this.fb.group({
+    name: ['', [Validators.required]],
+    phone: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', [Validators.required]],
+  });
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.formContactUs = this.fb.group({
-      name: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required]],
-    });
-  }
+  ngOnInit(): void {}
 
   submitForm(): void {}
 
